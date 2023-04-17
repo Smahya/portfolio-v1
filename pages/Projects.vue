@@ -1,0 +1,3 @@
+<template>
+  <project-section />
+</template>

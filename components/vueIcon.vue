@@ -1,0 +1,48 @@
+<template>
+  <svg
+    width="26"
+    height="24"
+    viewBox="0 0 26 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clip-path="url(#clip0_2152_34)">
+      <path
+        d="M20.798 0.216309H25.9976L12.9988 23.1955L0 0.216309H9.94406L12.9988 5.54481L15.9885 0.216309H20.798Z"
+        fill="var(--fill)"
+      />
+      <path
+        d="M0 0.216309L12.9988 23.1955L25.9976 0.216309H20.798L12.9988 14.0038L5.13452 0.216309H0Z"
+        fill="var(--fill)"
+      />
+      <path
+        d="M5.13477 0.216309L12.999 14.0704L20.7983 0.216309H15.9888L12.999 5.54482L9.94431 0.216309H5.13477Z"
+        fill="var(--fill-two)"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_2152_34">
+        <rect
+          width="26"
+          height="23"
+          fill="white"
+          transform="translate(0 0.216309)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+</template>
+
+<script>
+export default {
+  name: "VueIcon",
+  data() {
+    return {
+      // fill: "#9875F5",
+      // fillgreen: "#7551D5",
+    };
+  },
+};
+</script>
+
+<style scoped></style>
