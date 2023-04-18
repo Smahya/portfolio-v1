@@ -42,7 +42,7 @@
 import { ref, onMounted } from "vue";
 import sass from "@/assets/images/Sass.svg";
 import react from "@/assets/images/React.svg";
-import vue from "@/assets/images/vue.svg";
+import vue from "@/assets/images/Vue.svg";
 
 export default {
   setup() {
