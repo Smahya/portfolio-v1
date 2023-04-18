@@ -25,30 +25,39 @@
 
 <script>
 import Kwerty from '@/assets/images/kwerty.png';
+import Hrms from '@/assets/images/hrms.png';
+import Instrail from '@/assets/images/instrail.png';
 import { ref } from "vue";
 export default {
-  setup() {
+  props: {
+    all: {
+      type: Boolean
+    }
+  },
+  setup(props) {
     const mainProj = [
       {
         name: "Kwerty",
         description:
           "A public data engine, layered with artificial intelligence. The platform leverages on multiple global open datasets and uses a clean interactive view to improve decision making.",
-        techs: ["Vue JS", "Vuex", "Vue Router", "Chart.js"],
+        techs: ["Vue JS", "Vuex", "Vue Router", "Chart.js", "Sass"],
         imageUrl: Kwerty,
-      },
-      {
-        name: "Instrail",
-        description:
-          "A public data engine, layered with artificial intelligence. The platform leverages on multiple global open datasets and uses a clean interactive view to improve decision making.",
-        techs: ["Vue JS", "Vuex", "Vue Router", "Chart.js"],
-        imageUrl: Kwerty,
+        path: 'https://kwerty.io',
       },
       {
         name: "HRMS",
         description:
-          "A public data engine, layered with artificial intelligence. The platform leverages on multiple global open datasets and uses a clean interactive view to improve decision making.",
-        techs: ["Vue JS", "Vuex", "Vue Router", "Chart.js"],
-        imageUrl: Kwerty,
+        "A Human Resource (HR) management system. Design to help streamline the work of the HR including management of employee, leave, exit, appraisal reviews etc.",
+        techs: ["React", "Graphql", "Chakra", "React Router"],
+        imageUrl: Hrms,
+        path: 'https://ghana-hrms.enyata.com/login',
+      },
+      {
+        name: "Instrail",
+        description:
+          "An Insurance Management platform. Designed to help bring the purchase of insurance to the finger tips of the users.",
+        techs: ["Vue JS", "Vuex", "Vue Router", "Sass"],
+        imageUrl: Instrail,
       },
     ];
 
@@ -62,6 +71,10 @@ export default {
       },
     ];
 
+    const projectList = computed(() => {
+      return props.all ? mainProj : mainProj.slice(0, 2)
+    })
+
     const activeTab = ref("tab1")
 
     function changeTab(tab) {
@@ -70,7 +83,7 @@ export default {
     }
 
     const projects = computed(() => {
-      return activeTab.value === "tab1" ? mainProj : sideProj
+      return activeTab.value === "tab1" ? projectList.value : sideProj
     })
 
     console.log('projects', projects)

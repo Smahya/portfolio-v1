@@ -1,17 +1,17 @@
 <template>
-  <div class="tabs grid grid-cols-2">
+  <div class="tabs grid grid-cols-1">
     <button
       :class="['tab', active === 'tab1' ? 'tab__active' : 'tab']"
       @click="changeTab('tab1')"
     >
       {{ tab1 || "Dedicated projects" }}
     </button>
-    <button
+    <!-- <button
       :class="['tab', active === 'tab2' ? 'tab__active' : 'tab']"
       @click="changeTab('tab2')"
     >
       {{ tab2 || "Practice projects" }}
-    </button>
+    </button> -->
   </div>
 </template>
 

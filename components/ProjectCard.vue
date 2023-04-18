@@ -3,7 +3,7 @@
     <div class="rect"></div>
     <div class="card">
       <div class="card__left--pilar">
-        <div :class="['sass', `logo-sass-${active}`]">
+        <div @click="() => handleclick('sass')" :class="['sass', `logo-sass-${active}`]">
           <sass />
         </div>
         <div :class="['react', `logo-react-${active}`]">
@@ -21,6 +21,7 @@
 <script setup>
   const props = defineProps({
     active: String,
+    handleclick: Function
   });
 </script>
 

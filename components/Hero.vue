@@ -12,12 +12,14 @@
         </p>
 
         <div class="btn-wrap flex gap-x-6">
-          <Button variant="blue">View my work</Button>
-          <Button variant="outline">Contact me</Button>
+          <Button variant="blue" @click="$router.push('/projects')">View my work</Button>
+          <Button variant="outline">
+            <a href="mailto:salnaj14@gmail.com"> Contact me</a>
+          </Button>
         </div>
       </div>
       <div class="hero__section--right">
-        <project-card :active="active">
+        <project-card :active="active" :handleclick="onClick">
           <div class="hero__section--right-slot">
             <div class="inner">
               <div
@@ -57,11 +59,16 @@ export default {
       clearInterval(intervalId);
     });
 
+    function onClick(e) {
+      this.active = "sass";
+    }
+
 
     return {
       intervalId,
       active,
       iconList,
+      onClick,
     };
   },
 
@@ -80,11 +87,10 @@ export default {
   width: 100%;
   background: var(--black-400);
   height: auto;
-  min-height: calc(100vh - 8.2rem);
-  padding-bottom: 9rem;
-
-  @media screen and (min-width: 768px) {
-    padding-bottom: 0rem;
+  max-height: max-content;
+  padding-bottom: 12rem;
+  @media screen and (min-width: 1020px) {
+    padding-bottom: 25rem;
   }
 }
 .hero__section {

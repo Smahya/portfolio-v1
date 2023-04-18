@@ -8,3 +8,6 @@ node_modules
 dist
 .DB_Store
 DB_Store
+
+yarn.lock
+package-lock-json

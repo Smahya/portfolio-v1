@@ -1,7 +1,7 @@
 <template>
   <div class="project__list--item">
     <div class="project__list--item-texts mb-12">
-      <p class="prj__name">{{ project.name }}</p>
+      <NuxtLink :to="project.path" target="_blank" class="prj__name">{{ project.name }}</NuxtLink>
       <p class="light__16 mt-6 mb-10">{{ project.description }}</p>
       <p class="light__10">Main technologies (Frontend)</p>
 

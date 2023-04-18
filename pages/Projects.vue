@@ -1,3 +1,3 @@
 <template>
-  <project-section />
+  <project-section all />
 </template>
