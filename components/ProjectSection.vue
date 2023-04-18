@@ -78,7 +78,6 @@ export default {
     const activeTab = ref("tab1")
 
     function changeTab(tab) {
-      console.log(tab);
       activeTab.value = tab;
     }
 
@@ -86,7 +85,6 @@ export default {
       return activeTab.value === "tab1" ? projectList.value : sideProj
     })
 
-    console.log('projects', projects)
    
     return {
       activeTab,
