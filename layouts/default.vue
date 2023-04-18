@@ -2,6 +2,7 @@
   <div class="page__layout">
    <Navbar />
    <slot />
+   <Footer />
   </div>
 </template>
 

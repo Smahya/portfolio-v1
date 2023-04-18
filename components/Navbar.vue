@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar__main">
     <div class="navbar container">
-      <img src="@/assets/images/mahya.svg" alt="" />
+      <img src="@/assets/images/mahya.svg" class="logo" alt="" @click="$router.push('/')" />
       <div class="navbar__menu">
         <div v-for="navlink in navlinks" :key="navlink">
           <NuxtLink :to="navlink.path" :target="navlink.target">{{ navlink.link }}</NuxtLink>
@@ -47,6 +47,10 @@ a {
 .navbar {
   display: flex;
   justify-content: space-between;
+
+  .logo {
+    cursor: pointer;
+  }
 }
 .navbar__menu {
   display: none;

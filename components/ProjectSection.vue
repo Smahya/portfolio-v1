@@ -27,6 +27,7 @@
 import Kwerty from '@/assets/images/kwerty.png';
 import Hrms from '@/assets/images/hrms.png';
 import Instrail from '@/assets/images/instrail.png';
+import Velma from '@/assets/images/velma.png';
 import { ref } from "vue";
 export default {
   props: {
@@ -53,9 +54,17 @@ export default {
         path: 'https://ghana-hrms.enyata.com/login',
       },
       {
+        name: "Velma",
+        description:
+          "An Production management System. It is designed to strealine the production process from production to sales. Its Feature includes Raw materials, Traceability and Production.",
+        techs: ["Vue", "Pinia", "Vuetify"],
+        imageUrl: Velma,
+        path: 'https://app.velmafactory.com/login',
+      },
+      {
         name: "Instrail",
         description:
-          "An Insurance Management platform. Designed to help bring the purchase of insurance to the finger tips of the users.",
+          "An Insurance Management platform.Designed to help bring the purchase of insurance to the finger tips of the users.",
         techs: ["Vue JS", "Vuex", "Vue Router", "Sass"],
         imageUrl: Instrail,
       },
