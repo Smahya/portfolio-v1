@@ -6,10 +6,10 @@
         <div @click="() => handleclick('sass')" :class="['sass', `logo-sass-${active}`]">
           <sass />
         </div>
-        <div :class="['react', `logo-react-${active}`]">
+        <div @click="() => handleclick('react')" :class="['react', `logo-react-${active}`]">
           <reacticon />
         </div>
-        <div :class="['vue', `logo-vue-${active}`]">
+        <div @click="() => handleclick('vue')" :class="['vue', `logo-vue-${active}`]">
           <VueIcon />
         </div>
       </div>
@@ -19,10 +19,10 @@
 </template>
 
 <script setup>
-  const props = defineProps({
-    active: String,
-    handleclick: Function
-  });
+const props = defineProps({
+  active: String,
+  handleclick: Function
+});
 </script>
 
 <style lang="scss" scoped>
@@ -37,14 +37,16 @@
   flex-direction: column-reverse;
   position: relative;
   z-index: 10;
+
   @media screen and (min-width: 768px) {
     display: grid;
-    grid: 1fr /  8.7rem auto;
+    grid: 1fr / 8.7rem auto;
   }
 
   &__left {
     width: 100%;
     height: inherit;
+
     &--pilar {
       height: inherit;
       background: var(--black-200);
@@ -55,11 +57,13 @@
       place-content: center;
       gap: 3.2rem;
       padding: 2.4rem 0;
+
       @media screen and (min-width: 768px) {
         display: grid;
       }
     }
   }
+
   &__right {
     width: 100%;
   }
@@ -69,8 +73,13 @@
 .react,
 .vue {
   cursor: pointer;
+
   svg {
     fill: #888596;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -79,11 +88,13 @@
     fill: #cd6799;
   }
 }
+
 .logo-react-react {
   svg {
     fill: #61dafb;
   }
 }
+
 .logo-vue-vue {
   --fill-two: #34495E;
   --fill: #41B883;
@@ -101,8 +112,9 @@
   z-index: 5;
   animation: roll 3s ease-in;
   display: none;
+
   @media screen and (min-width: 768px) {
-   display: flex;
+    display: flex;
   }
 }
 
@@ -110,6 +122,7 @@
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }

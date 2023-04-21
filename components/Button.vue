@@ -28,5 +28,12 @@ const props = defineProps({
   &__blue {
     background: var(--primary-blue);
   }
+
+  &:hover {
+    box-shadow: -3px 1px 39px -7px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -3px 1px 39px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -3px 1px 39px -7px rgba(0, 0, 0, 0.75);
+    opacity: 0.8;
+  }
 }
 </style>

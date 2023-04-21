@@ -1,8 +1,6 @@
 <template>
   <div class="hero">
-    <div
-      class="hero__section container grid items-center md:grid-cols-1 lg:grid-cols-2"
-    >
+    <div class="hero__section container grid items-center md:grid-cols-1 lg:grid-cols-2">
       <div class="hero__section--left">
         <p class="sm__text hi">Hi, I'm Salma</p>
         <p class="lg__text">I Build <span>Frontends</span></p>
@@ -14,19 +12,15 @@
         <div class="btn-wrap flex gap-x-6">
           <Button variant="blue" @click="$router.push('/projects')">View my work</Button>
           <Button variant="outline">
-            <a href="mailto:salnaj14@gmail.com"> Contact me</a>
+            <a href="mailto:contact@salmasali.com"> Contact me</a>
           </Button>
         </div>
       </div>
       <div class="hero__section--right">
-        <project-card :active="active" :handleclick="onClick">
+        <project-card :active="active" :handleclick="clickHandler">
           <div class="hero__section--right-slot">
             <div class="inner">
-              <div
-                :class="['image', { active: key === active }]"
-                v-for="[key, val] in iconList"
-                :key="key"
-              >
+              <div :class="['image', { active: key === active }]" v-for="[key, val] in iconList" :key="key">
                 <img :src="val" alt="" />
                 <!-- <div class="shadow"></div> -->
               </div>
@@ -47,7 +41,7 @@ import vue from "@/assets/images/Vue.svg";
 export default {
   setup() {
     const iconsObj = { sass: sass, react: react, vue: vue };
-   
+
     const intervalId = ref(null);
     const active = ref("sass");
 
@@ -59,8 +53,8 @@ export default {
       clearInterval(intervalId);
     });
 
-    function onClick(e) {
-      this.active = "sass";
+    function clickHandler(e) {
+      active.value = e;
     }
 
 
@@ -68,7 +62,7 @@ export default {
       intervalId,
       active,
       iconList,
-      onClick,
+      clickHandler,
     };
   },
 
@@ -89,15 +83,18 @@ export default {
   height: auto;
   max-height: max-content;
   padding-bottom: 12rem;
+
   @media screen and (min-width: 1020px) {
     padding-bottom: 25rem;
   }
 }
+
 .hero__section {
   height: auto;
   color: var(--white);
   grid-row-gap: 5rem;
   margin-top: 4rem;
+
   @media screen and (min-width: 768px) {
     margin-top: 10rem;
   }
@@ -111,6 +108,7 @@ export default {
     .lg__text {
       margin: 0.8rem 0 2.4rem 0;
     }
+
     .hi::before {
       content: "";
       border: 1px solid #3a3845;
@@ -144,13 +142,13 @@ export default {
         display: grid;
         grid: 1fr / 1fr;
 
-        > * {
+        >* {
           grid-area: 1/1/2/2;
         }
       }
     }
-    @media screen and (min-width: 768px) {
-    }
+
+    @media screen and (min-width: 768px) {}
 
     .image {
       display: flex;
@@ -158,6 +156,7 @@ export default {
       opacity: 0;
       transition: all 0.5s ease-in-out;
       position: relative;
+
       &.active {
         transform: translateY(0) scale(1);
         opacity: 1;

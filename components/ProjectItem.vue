@@ -7,7 +7,7 @@
 
       <div class="tech__wrap flex flex-wrap gap-3 mt-5">
         <div class="tech" v-for="tech in project.techs" :key="tech">
-          <p>{{  tech  }}</p>
+          <p>{{ tech }}</p>
         </div>
       </div>
     </div>
@@ -37,19 +37,26 @@ const props = defineProps({
   margin-bottom: 4rem;
   gap: 3rem;
 
- 
+
   &-texts {
     width: 100%;
+
     img {
       object-fit: contain;
     }
   }
+
   &-image {
     width: 100%;
     position: relative;
     display: grid;
+
     img {
       object-fit: contain;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
 
@@ -63,17 +70,19 @@ const props = defineProps({
     line-height: 150%;
     padding: 0.4rem 1.2rem;
     width: max-content;
+
     p {
       white-space: nowrap;
     }
   }
 
-   @media screen and (min-width: 980px) {
+  @media screen and (min-width: 980px) {
     width: 100%;
     padding: 2.8rem 6.4rem 0;
     display: grid;
     grid: 1fr / repeat(2, 1fr);
     margin-bottom: 8rem;
+
     &-image {
       img {
         transform: translateY(25%);

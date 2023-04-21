@@ -41,7 +41,7 @@ const props = defineProps({
   letter-spacing: 0.01em;
   color: #ffffff;
   border-radius: 0.4rem;
-  width: max-content;
+  // width: max-content;
   @media screen and (min-width: 768px) {
     width: 53rem;
   }
