@@ -1,12 +1,7 @@
 <template>
   <nav class="navbar__main">
     <div class="navbar container">
-      <img
-        src="@/assets/images/mahya.svg"
-        class="logo"
-        alt=""
-        @click="$router.push('/')"
-      />
+      <img src="@/assets/images/mahya.svg" class="logo" alt="" @click="$router.push('/')" />
       <div class="navbar__menu">
         <div v-for="navlink in navlinks" :key="navlink">
           <NuxtLink :to="navlink.path" :target="navlink.target">{{
@@ -33,7 +28,7 @@ const navlinks = [
   { link: "Projects", path: "/projects" },
   {
     link: "Resume",
-    path:"/"
+    path: "/"
   },
 ];
 // "https://docs.google.com/document/d/1ifCkqXpfaGeRbx8Xt0gIH70hYKUkol61wOkv--CcyNE/",
@@ -54,9 +49,11 @@ a {
   line-height: 4.7rem;
   letter-spacing: -0.01em;
 }
+
 .router-link-active {
   opacity: 0.5;
 }
+
 .router-link-exact-active {
   opacity: 1;
 }
@@ -69,6 +66,7 @@ a {
   padding: 1.6rem 0rem;
   z-index: 500;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -97,6 +95,7 @@ a {
   background: var(--primary-blue);
   z-index: 100;
   border-radius: 8px;
+
   @media (min-width: 768px) {
     display: none;
   }
@@ -112,6 +111,7 @@ a {
     display: none;
   }
 }
+
 .navbar__menu {
   display: none;
   align-items: center;
