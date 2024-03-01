@@ -33,11 +33,10 @@ const navlinks = [
   { link: "Projects", path: "/projects" },
   {
     link: "Resume",
-    path:
-      "https://docs.google.com/document/d/1ifCkqXpfaGeRbx8Xt0gIH70hYKUkol61wOkv--CcyNE/",
-    target: "_blank",
+    path:"/"
   },
 ];
+// "https://docs.google.com/document/d/1ifCkqXpfaGeRbx8Xt0gIH70hYKUkol61wOkv--CcyNE/",
 
 function mobileMenu() {
   let label = document.querySelector(".navbar");
