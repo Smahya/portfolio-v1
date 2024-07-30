@@ -1,7 +1,9 @@
 <template>
   <div class="project__list--item">
     <div class="project__list--item-texts mb-12">
-      <NuxtLink :to="project.path" target="_blank" class="prj__name">{{ project.name }}</NuxtLink>
+      <NuxtLink :to="project.path" target="_blank" class="prj__name">{{
+        project.name
+      }}</NuxtLink>
       <p class="light__16 mt-6 mb-10">{{ project.description }}</p>
       <p class="light__10">Main technologies (Frontend)</p>
 
@@ -11,8 +13,10 @@
         </div>
       </div>
     </div>
-    <div class="project__list--item-image">
-      <img :src="project.imageUrl" alt="img">
+    <div class="project__list--item-image hover01">
+      <figure>
+        <img :src="project.imageUrl" alt="img" />
+      </figure>
     </div>
   </div>
 </template>
@@ -24,6 +28,17 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+.hover01 figure img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.hover01 figure:hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
 .project__list--item {
   padding: 2.8rem 2.4rem 0;
   width: 96%;
@@ -36,7 +51,6 @@ const props = defineProps({
   flex-direction: column-reverse;
   margin-bottom: 4rem;
   gap: 3rem;
-
 
   &-texts {
     width: 100%;

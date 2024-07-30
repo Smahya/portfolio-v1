@@ -1,7 +1,12 @@
 <template>
   <nav class="navbar__main">
     <div class="navbar container">
-      <img src="@/assets/images/mahya.svg" class="logo" alt="" @click="$router.push('/')" />
+      <img
+        src="@/assets/svgs/mahya.svg"
+        class="logo"
+        alt=""
+        @click="$router.push('/')"
+      />
       <div class="navbar__menu">
         <div v-for="navlink in navlinks" :key="navlink">
           <NuxtLink :to="navlink.path" :target="navlink.target">{{
@@ -26,10 +31,10 @@
 const navlinks = [
   { link: "Home", path: "/" },
   { link: "Projects", path: "/projects" },
-  {
-    link: "Resume",
-    path: "/"
-  },
+  // {
+  //   link: "Resume",
+  //   path: "/",
+  // },
 ];
 // "https://docs.google.com/document/d/1ifCkqXpfaGeRbx8Xt0gIH70hYKUkol61wOkv--CcyNE/",
 

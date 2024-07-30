@@ -3,14 +3,41 @@
     <div class="rect"></div>
     <div class="card">
       <div class="card__left--pilar">
-        <div @click="() => handleclick('sass')" :class="['sass', `logo-sass-${active}`]">
-          <sass />
-        </div>
-        <div @click="() => handleclick('react')" :class="['react', `logo-react-${active}`]">
+        <div
+          @click="() => handleclick('react')"
+          :class="[
+            'react flex items-center justify-center',
+            `logo-react-${active}`,
+          ]"
+        >
           <reacticon />
         </div>
-        <div @click="() => handleclick('vue')" :class="['vue', `logo-vue-${active}`]">
+        <div
+          @click="() => handleclick('next')"
+          :class="[
+            'next flex items-center justify-center',
+            `logo-next-${active}`,
+          ]"
+        >
+          <NextIcon />
+        </div>
+        <div
+          @click="() => handleclick('vue')"
+          :class="[
+            'vue flex items-center justify-center',
+            `logo-vue-${active}`,
+          ]"
+        >
           <VueIcon />
+        </div>
+        <div
+          @click="() => handleclick('sass')"
+          :class="[
+            'sass flex items-center justify-center',
+            `logo-sass-${active}`,
+          ]"
+        >
+          <sass />
         </div>
       </div>
       <slot />
@@ -21,7 +48,7 @@
 <script setup>
 const props = defineProps({
   active: String,
-  handleclick: Function
+  handleclick: Function,
 });
 </script>
 
@@ -71,7 +98,8 @@ const props = defineProps({
 
 .sass,
 .react,
-.vue {
+.vue,
+.next {
   cursor: pointer;
 
   svg {
@@ -96,8 +124,13 @@ const props = defineProps({
 }
 
 .logo-vue-vue {
-  --fill-two: #34495E;
-  --fill: #41B883;
+  --fill-two: #34495e;
+  --fill: #41b883;
+}
+.logo-next-next {
+  svg {
+    fill: #000000;
+  }
 }
 
 .rect {

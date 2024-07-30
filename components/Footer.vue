@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-  <NuxtLink to="https://github.com/andro-juli">
-    <img src="@/assets/images/github.svg" class="icon" alt="" />
-  </NuxtLink>
+    <NuxtLink to="https://github.com/Smahya">
+      <img src="@/assets/svgs/github.svg" class="icon" alt="" />
+    </NuxtLink>
   </div>
 </template>
 
@@ -10,10 +10,10 @@
 
 <style lang="scss" scoped>
 .container {
- padding: 2rem 0;
+  padding: 2rem 0;
 
- .icon {
-  cursor: pointer;
- }
+  .icon {
+    cursor: pointer;
+  }
 }
 </style>

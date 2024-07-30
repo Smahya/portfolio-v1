@@ -1,6 +1,8 @@
 <template>
   <div class="hero">
-    <div class="hero__section container grid items-center md:grid-cols-1 lg:grid-cols-2">
+    <div
+      class="hero__section container grid items-center md:grid-cols-1 lg:grid-cols-2"
+    >
       <div class="hero__section--left">
         <p class="sm__text hi">Hi, I'm Salma</p>
         <p class="lg__text">I Build <span>Frontends</span></p>
@@ -10,9 +12,12 @@
         </p>
 
         <div class="btn-wrap flex gap-x-6">
-          <Button variant="blue" @click="$router.push('/projects')">View my work</Button>
+          <Button variant="blue" @click="$router.push('/projects')"
+            >View my work</Button
+          >
           <Button variant="outline">
-            <a href="mailto:contact@salmasali.com"> Contact me</a>
+            <!-- <a href="mailto:contact@salmasali.com"> Contact me</a> -->
+            <a href="mailto:ssalmamahya@gmail.com"> Contact me</a>
           </Button>
         </div>
       </div>
@@ -20,8 +25,12 @@
         <project-card :active="active" :handleclick="clickHandler">
           <div class="hero__section--right-slot">
             <div class="inner">
-              <div :class="['image', { active: key === active }]" v-for="[key, val] in iconList" :key="key">
-                <img :src="val" alt="" />
+              <div
+                :class="['image', { active: key === active }]"
+                v-for="[key, val] in iconList"
+                :key="key"
+              >
+                <img :src="val" :alt="`${key}-logo`" class="w-[204px]" />
                 <!-- <div class="shadow"></div> -->
               </div>
             </div>
@@ -34,16 +43,17 @@
 
 <script>
 import { ref, onMounted } from "vue";
-import sass from "@/assets/images/Sass.svg";
-import react from "@/assets/images/React.svg";
-import vue from "@/assets/images/Vue.svg";
+import sass from "@/assets/svgs/Sass.svg";
+import react from "@/assets/svgs/React.svg";
+import vue from "@/assets/svgs/Vue.svg";
+import next from "@/assets/svgs/next.svg";
 
 export default {
   setup() {
-    const iconsObj = { sass: sass, react: react, vue: vue };
+    const iconsObj = { react, next, vue, sass };
 
     const intervalId = ref(null);
-    const active = ref("sass");
+    const active = ref("react");
 
     const iconList = computed(() => {
       return Object.entries(iconsObj);
@@ -56,7 +66,6 @@ export default {
     function clickHandler(e) {
       active.value = e;
     }
-
 
     return {
       intervalId,
@@ -142,13 +151,14 @@ export default {
         display: grid;
         grid: 1fr / 1fr;
 
-        >* {
+        > * {
           grid-area: 1/1/2/2;
         }
       }
     }
 
-    @media screen and (min-width: 768px) {}
+    @media screen and (min-width: 768px) {
+    }
 
     .image {
       display: flex;

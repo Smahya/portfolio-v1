@@ -4,9 +4,11 @@ export default defineNuxtConfig({
     // SCSS file in the project
     "@/assets/css/main.scss",
   ],
+
   modules: [
     '@nuxtjs/tailwindcss'
   ],
+
   app: {
     head: {
       charset: 'utf-8',
@@ -19,5 +21,7 @@ export default defineNuxtConfig({
       ]
     },
     pageTransition: { name: 'page', mode: 'out-in' }
-  }
+  },
+
+  compatibilityDate: '2024-07-30'
 });
