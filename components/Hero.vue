@@ -47,10 +47,11 @@ import sass from "@/assets/svgs/Sass.svg";
 import react from "@/assets/svgs/React.svg";
 import vue from "@/assets/svgs/Vue.svg";
 import next from "@/assets/svgs/next.svg";
+import nuxt from "@/assets/svgs/nuxt.svg";
 
 export default {
   setup() {
-    const iconsObj = { react, next, vue, sass };
+    const iconsObj = { react, next, vue, nuxt, sass };
 
     const intervalId = ref(null);
     const active = ref("react");

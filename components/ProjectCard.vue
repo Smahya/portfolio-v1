@@ -31,6 +31,15 @@
           <VueIcon />
         </div>
         <div
+          @click="() => handleclick('nuxt')"
+          :class="[
+            'nuxt flex items-center justify-center',
+            `logo-nuxt-${active}`,
+          ]"
+        >
+          <Nuxt />
+        </div>
+        <div
           @click="() => handleclick('sass')"
           :class="[
             'sass flex items-center justify-center',
@@ -99,6 +108,7 @@ const props = defineProps({
 .sass,
 .react,
 .vue,
+.nuxt,
 .next {
   cursor: pointer;
 
@@ -130,6 +140,11 @@ const props = defineProps({
 .logo-next-next {
   svg {
     fill: #000000;
+  }
+}
+.logo-nuxt-nuxt {
+  svg {
+    fill: #00dc82;
   }
 }
 
