@@ -10,7 +10,7 @@
             `logo-react-${active}`,
           ]"
         >
-          <reacticon />
+          <IconsReacticon />
         </div>
         <div
           @click="() => handleclick('next')"
@@ -19,7 +19,7 @@
             `logo-next-${active}`,
           ]"
         >
-          <NextIcon />
+          <IconsNextIcon />
         </div>
         <div
           @click="() => handleclick('vue')"
@@ -28,7 +28,7 @@
             `logo-vue-${active}`,
           ]"
         >
-          <VueIcon />
+          <IconsVueIcon />
         </div>
         <div
           @click="() => handleclick('nuxt')"
@@ -37,7 +37,7 @@
             `logo-nuxt-${active}`,
           ]"
         >
-          <Nuxt />
+          <IconsNuxt />
         </div>
         <div
           @click="() => handleclick('sass')"
@@ -46,7 +46,7 @@
             `logo-sass-${active}`,
           ]"
         >
-          <sass />
+          <IconsSass />
         </div>
       </div>
       <slot />

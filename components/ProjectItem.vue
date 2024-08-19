@@ -1,9 +1,13 @@
 <template>
   <div class="project__list--item">
     <div class="project__list--item-texts mb-12">
-      <NuxtLink :to="project.path" target="_blank" class="prj__name">{{
-        project.name
-      }}</NuxtLink>
+      <NuxtLink
+        :to="project.path"
+        target="_blank"
+        class="prj__name flex items-center gap-4 hover:underline hover:text-primary-blue"
+        >{{ project.name }}
+        <img src="@/assets/svgs/link.svg" alt="link" />
+      </NuxtLink>
       <p class="light__16 mt-6 mb-10">{{ project.description }}</p>
       <p class="light__10">Main technologies (Frontend)</p>
 

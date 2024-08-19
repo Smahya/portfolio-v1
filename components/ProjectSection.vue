@@ -9,7 +9,7 @@
         <p class="ms__text text-center mb-6">
           Here are some of the projects I’ve worked on.
         </p>
-        <Tabs :active="activeTab" :changeTab="changeTab" />
+        <Tabs :active="activeTab" :changeTab="changeTab" v-if="isProjectPage" />
       </div>
 
       <div
@@ -23,111 +23,119 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import SeedFi from "@/assets/images/seedFi.png";
 import Kwerty from "@/assets/images/kwerty.png";
 import Hrms from "@/assets/images/hrms.png";
-import Instrail from "@/assets/images/instrail.png";
+// import Instrail from "@/assets/images/instrail.png";
 import Rigour from "@/assets/images/rigour.png";
+import Creatr from "@/assets/images/creatr.png";
 import Pokebook from "@/assets/images/pokemon.png";
 import TTT from "@/assets/images/tic-tac-toe.png";
 import { ref } from "vue";
-export default {
-  props: {
-    all: {
-      type: Boolean,
-    },
+
+const props = defineProps({
+  all: {
+    type: Boolean,
   },
-  setup(props) {
-    const mainProj = [
-      {
-        name: "SeedFi",
-        description:
-          "SeedFi is a Finance management System. It is designed to allow seamless access to smart lending opportunities. Its Feature includes Loans(Personal, Business, Groups), Payments etc.",
-        techs: ["React", "Scss", "Typescript", "Tailwind"],
-        imageUrl: SeedFi,
-        path: "https://theseedfi.com",
-      },
-      {
-        name: "Kwerty",
-        description:
-          "A public data engine, layered with artificial intelligence. The platform leverages on multiple global open datasets and uses a clean interactive view to improve decision making.",
-        techs: ["Vue JS", "Vuex", "Vue Router", "Chart.js", "Sass"],
-        imageUrl: Kwerty,
-        path: "https://kwerty.io",
-      },
-      {
-        name: "HRMS",
-        description:
-          "A Human Resource (HR) management system. Design to help streamline the work of the HR including management of employee, leave, exit, appraisal reviews etc.",
-        techs: ["React", "Graphql", "Chakra", "React Router"],
-        imageUrl: Hrms,
-        path: "https://ghana-hrms.enyata.com/login",
-      },
-      {
-        name: "Rigour-OS",
-        description:
-          "A comprehensive healthcare management system with platforms for customers and providers.",
-        techs: ["Next", "Scss", "Typescript"],
-        imageUrl: Rigour,
-        path: "",
-      },
-      // {
-      //   name: "Velma",
-      //   description:
-      //     "An Production management System. It is designed to strealine the production process from production to sales. Its Feature includes Raw materials, Traceability and Production.",
-      //   techs: ["Vue", "Pinia", "Vuetify"],
-      //   imageUrl: Velma,
-      //   path: "https://app.velmafactory.com/login",
-      // },
-      {
-        name: "Instrail",
-        description:
-          "An Insurance Management platform.Designed to help bring the purchase of insurance to the finger tips of the users.",
-        techs: ["Vue JS", "Vuex", "Vue Router", "Sass"],
-        imageUrl: Instrail,
-      },
-    ];
+});
 
-    const sideProj = [
-      {
-        name: "Pokemon",
-        description:
-          "A pokemon application. It is designed to help users to improve their knowledge of pokemons. Learn about pokemons characteristics and similarities with other pokemons.",
-        techs: ["Vue JS", "Pinia"],
-        imageUrl: Pokebook,
-        path: "https://pokebook.salmasali.com/",
-      },
-      {
-        name: "Tic Tac Toe",
-        description:
-          "Can you form a continuous line of three?. Try beating yourself / CPU in this classic game.",
-        techs: ["React", "Typescript", "Tailwind"],
-        imageUrl: TTT,
-      },
-    ];
-
-    const projectList = computed(() => {
-      return props.all ? mainProj : mainProj.slice(0, 2);
-    });
-
-    const activeTab = ref("tab1");
-
-    function changeTab(tab) {
-      activeTab.value = tab;
-    }
-
-    const projects = computed(() => {
-      return activeTab.value === "tab1" ? projectList.value : sideProj;
-    });
-
-    return {
-      activeTab,
-      changeTab,
-      projects,
-    };
+const mainProj = [
+  {
+    name: "SeedFi",
+    description:
+      "SeedFi is a Finance management System. It is designed to allow seamless access to smart lending opportunities. Its Feature includes Loans(Personal, Business, Groups), Payments etc.",
+    techs: ["React", "Scss", "Typescript", "Tailwind"],
+    imageUrl: SeedFi,
+    path: "https://theseedfi.com",
   },
-};
+  {
+    name: "Kwerty",
+    description:
+      "A public data engine, layered with artificial intelligence. The platform leverages on multiple global open datasets and uses a clean interactive view to improve decision making.",
+    techs: ["Vue JS", "Vuex", "Vue Router", "Chart.js", "Sass"],
+    imageUrl: Kwerty,
+    path: "https://kwerty.io",
+  },
+  {
+    name: "Creatr",
+    description:
+      "A content management app, a one-stop-tool for creators, talent managers, and businesses.",
+    techs: ["React", "Typescript", "Tailwind"],
+    imageUrl: Creatr,
+    path: "https://creatr.aeone.co/",
+  },
+  {
+    name: "Rigour-OS",
+    description:
+      "A comprehensive healthcare management system with platforms for customers and providers.",
+    techs: ["Next", "Scss", "Typescript"],
+    imageUrl: Rigour,
+    path: "",
+  },
+  {
+    name: "HRMS",
+    description:
+      "A Human Resource (HR) management system. Design to help streamline the work of the HR including management of employee, leave, exit, appraisal reviews etc.",
+    techs: ["React", "Graphql", "Chakra", "React Router"],
+    imageUrl: Hrms,
+    path: "https://ghana-hrms.enyata.com/login",
+  },
+  // {
+  //   name: "Velma",
+  //   description:
+  //     "An Production management System. It is designed to strealine the production process from production to sales. Its Feature includes Raw materials, Traceability and Production.",
+  //   techs: ["Vue", "Pinia", "Vuetify"],
+  //   imageUrl: Velma,
+  //   path: "https://app.velmafactory.com/login",
+  // },
+  // {
+  //   name: "Instrail",
+  //   description:
+  //     "An Insurance Management platform.Designed to help bring the purchase of insurance to the finger tips of the users.",
+  //   techs: ["Vue JS", "Vuex", "Vue Router", "Sass"],
+  //   imageUrl: Instrail,
+  // },
+];
+
+const sideProj = [
+  {
+    name: "Tic Tac Toe",
+    description:
+      "Can you form a continuous line of three?. Try beating yourself / CPU in this classic game.",
+    techs: ["React", "Typescript", "Tailwind"],
+    imageUrl: TTT,
+    path: "https://tic-tac-toe.salmasali.com/",
+  },
+  {
+    name: "Pokemon",
+    description:
+      "A pokemon application. It is designed to help users to improve their knowledge of pokemons. Learn about pokemons characteristics and similarities with other pokemons.",
+    techs: ["Vue JS", "Pinia"],
+    imageUrl: Pokebook,
+    path: "https://pokebook.salmasali.com/",
+  },
+];
+
+const route = useRoute();
+
+const projectList = computed(() => {
+  return props.all ? mainProj : mainProj.slice(0, 2);
+});
+
+const activeTab = ref("tab1");
+
+function changeTab(tab) {
+  activeTab.value = tab;
+}
+
+const projects = computed(() => {
+  return activeTab.value === "tab1" ? projectList.value : sideProj;
+});
+
+const isProjectPage = computed(() => {
+  return route.path === "/projects";
+});
 </script>
 
 <style lang="scss" scoped>
