@@ -27,10 +27,10 @@
 import SeedFi from "@/assets/images/seedFi.png";
 import Kwerty from "@/assets/images/kwerty.png";
 import Hrms from "@/assets/images/hrms.png";
-// import Instrail from "@/assets/images/instrail.png";
 import Rigour from "@/assets/images/rigour.png";
 import Creatr from "@/assets/images/creatr.png";
 import Pokebook from "@/assets/images/pokemon.png";
+import Hangman from "@/assets/images/hangman.png";
 import TTT from "@/assets/images/tic-tac-toe.png";
 import { ref } from "vue";
 
@@ -99,6 +99,14 @@ const mainProj = [
 ];
 
 const sideProj = [
+  {
+    name: "Hangman",
+    description:
+      "A hangman game. It is designed to help users to improve their worldly knowledge. Prove you are the best in the world by guessing the right movie, tv show, country, and more.",
+    techs: ["Next.js", "Typescript", "Tailwind"],
+    imageUrl: Hangman,
+    path: "https://hangman.salmasali.com/",
+  },
   {
     name: "Tic Tac Toe",
     description:
