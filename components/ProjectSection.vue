@@ -32,6 +32,8 @@ import Creatr from "@/assets/images/creatr.png";
 import Pokebook from "@/assets/images/pokemon.png";
 import Hangman from "@/assets/images/hangman.png";
 import TTT from "@/assets/images/tic-tac-toe.png";
+import Notes from "@/assets/images/notes.png";
+import Stitch from "@/assets/images/stitch.png";
 import { ref } from "vue";
 
 const props = defineProps({
@@ -71,7 +73,15 @@ const mainProj = [
       "A comprehensive healthcare management system with platforms for customers and providers.",
     techs: ["Next", "Scss", "Typescript"],
     imageUrl: Rigour,
-    path: "",
+    path: "https://rigourplus.com",
+  },
+  {
+    name: "Stitchhouse",
+    description:
+      "A fashion store. It is designed to help users buy and sell clothes including features for production requests.",
+    techs: ["React", "Typescript", "Tailwind"],
+    imageUrl: Stitch,
+    path: "https://stitch.enyata.com/",
   },
   {
     name: "HRMS",
@@ -99,6 +109,14 @@ const mainProj = [
 ];
 
 const sideProj = [
+  {
+    name: "Notes App",
+    description:
+      "A notes app. It is designed to help users to take notes and save them. Users can add, edit, delete, archive and search for notes.",
+    techs: ["Next.js", "Typescript", "Tailwind", "Supabase"],
+    imageUrl: Notes,
+    path: "https://note.salmasali.com/",
+  },
   {
     name: "Hangman",
     description:
