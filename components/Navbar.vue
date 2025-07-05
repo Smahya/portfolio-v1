@@ -31,12 +31,8 @@
 const navlinks = [
   { link: "Home", path: "/" },
   { link: "Projects", path: "/projects" },
-  // {
-  //   link: "Resume",
-  //   path: "/",
-  // },
+  { link: "Blog", path: "https://blog.salmasali.com/", target: "_blank" },
 ];
-// "https://docs.google.com/document/d/1ifCkqXpfaGeRbx8Xt0gIH70hYKUkol61wOkv--CcyNE/",
 
 function mobileMenu() {
   let label = document.querySelector(".navbar");
@@ -53,6 +49,9 @@ a {
   font-size: 1.6rem;
   line-height: 4.7rem;
   letter-spacing: -0.01em;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .router-link-active {
